@@ -1,0 +1,174 @@
+max (x, y) {
+  if (x <= y) {
+    return y
+  } else {
+    return x
+  }
+}
+
+abs (x) {
+  return max (x, (0 - x))
+}
+
+test () {
+  assertEquals (abs (5), 5)
+}
+test () {
+  assertEquals (max (5, 2), 5)
+}
+max (x, y) {
+  return 5
+}
+
+test () {
+  assertEquals (max (5, 2), 5)
+}
+max (x, y) {
+  return x
+}
+
+test () {
+  assertEquals (max (5, 2), 5)
+}
+test () {
+  assertEquals (5, 5)
+}
+max (x, y) {
+  return y
+}
+
+test () {
+  assertEquals (max (5, 2), 5)
+}
+max (x, y) {
+  if (x <= y) {
+    return x
+  } else {
+    return y
+  }
+}
+
+test () {
+  assertEquals (max (5, 2), 5)
+}
+max (x, y) {
+  if (x <= y) {
+    return y
+  } else {
+    return x
+  }
+}
+
+test () {
+  assertEquals (max (5, 2), 5)
+}
+test (x, y, z) {
+  if (x <= y) {
+    assertEquals (y, z)
+  } else {
+    assertEquals (x, z)
+  }
+}
+max (x, y) {
+  return 5
+}
+
+test () {
+  assertEquals (max (5, 2), 5);
+  assertEquals (max (6, 2), 6)
+}
+max (x, y) {
+  return x
+}
+
+test () {
+  assertEquals (max (5, 2), 5);
+  assertEquals (max (6, 2), 6)
+}
+max (x, y) {
+  if (x <= 2) {
+    return 5
+  } else {
+    return x
+  }
+}
+
+test () {
+  assertEquals (max (5, 2), 5);
+  assertEquals (max (6, 2), 6);
+  assertEquals (max (2, 5), 5)
+}
+max (x, y) {
+  if (x <= 2) {
+    return y
+  } else {
+    return x
+  }
+}
+
+test () {
+  assertEquals (max (5, 2), 5);
+  assertEquals (max (6, 2), 6);
+  assertEquals (max (2, 5), 5)
+}
+max (x, y) {
+  if (x <= y) {
+    return x
+  } else {
+    return y
+  }
+}
+
+test () {
+  assertEquals (max (5, 2), 5);
+  assertEquals (max (6, 2), 6);
+  assertEquals (max (2, 5), 5)
+}
+max (x, y) {
+  if (x <= y) {
+    return y
+  } else {
+    return x
+  }
+}
+
+test () {
+  assertEquals (max (5, 2), 5);
+  assertEquals (max (6, 2), 6);
+  assertEquals (max (2, 5), 5)
+}
+max (x, y) {
+  if (x <= y) {
+    return y
+  } else {
+    return x
+  }
+}
+
+max3 (x, y, z) {
+  return max (max (x, y), z)
+}
+
+test () {
+  assertEquals (max3 (1, 3, 2), 3)
+}
+test () {
+  x := 2;
+  y := 3;
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+  assertEquals (z, 3)
+}
+test () {
+  x := 2;
+  y := 3;
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+  assertEquals (z, y)
+}

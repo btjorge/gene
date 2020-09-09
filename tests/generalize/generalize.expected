@@ -1,0 +1,66 @@
+test (_x0, _x1, _x2) {
+  assertEquals (max (_x0, _x1), _x2)
+}
+test (_x3, _x4, _x5) {
+  assertEquals (max (_x3, _x4), _x5)
+}
+test (_x6, _x7, _x8) {
+  assertEquals (max (_x6, _x7), _x8)
+}
+test (_x9, _x10, _x11) {
+  assertEquals (max (_x9, _x10), _x11)
+}
+test (_x12, _x13, _x14) {
+  assertEquals (max (_x12, _x13), _x14)
+}
+test (_x15, _x16, _x17, _x18, _x19, _x20) {
+  assertEquals (max (_x15, _x16), _x17);
+  assertEquals (max (_x18, _x19), _x20)
+}
+test (_x21, _x22, _x23, _x24, _x25, _x26) {
+  assertEquals (max (_x21, _x22), _x23);
+  assertEquals (max (_x24, _x25), _x26)
+}
+test (_x27, _x28, _x29, _x30, _x31, _x32, _x33, _x34, _x35) {
+  assertEquals (max (_x27, _x28), _x29);
+  assertEquals (max (_x30, _x31), _x32);
+  assertEquals (max (_x33, _x34), _x35)
+}
+test (_x36, _x37, _x38, _x39, _x40, _x41, _x42, _x43, _x44) {
+  assertEquals (max (_x36, _x37), _x38);
+  assertEquals (max (_x39, _x40), _x41);
+  assertEquals (max (_x42, _x43), _x44)
+}
+test (_x45, _x46, _x47, _x48, _x49, _x50, _x51, _x52, _x53) {
+  assertEquals (max (_x45, _x46), _x47);
+  assertEquals (max (_x48, _x49), _x50);
+  assertEquals (max (_x51, _x52), _x53)
+}
+test (_x54, _x55, _x56, _x57, _x58, _x59, _x60, _x61, _x62) {
+  assertEquals (max (_x54, _x55), _x56);
+  assertEquals (max (_x57, _x58), _x59);
+  assertEquals (max (_x60, _x61), _x62)
+}
+test (_x63, _x64, _x65, _x66) {
+  assertEquals (max3 (_x63, _x64, _x65), _x66)
+}
+test (_x67, _x68, _x69) {
+  x := _x67;
+  y := _x68;
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+  assertEquals (z, _x69)
+}
+test (_x70, _x71) {
+  x := _x70;
+  y := _x71;
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+  assertEquals (z, y)
+}

@@ -1,0 +1,9 @@
+(* formule attendue : x <= y -> z = y /\ ! x <= y -> z = x *)
+
+test (x, y, z) {
+  if (x <= y) {
+    assertEquals (y, z)
+  } else {
+    assertEquals (x, z)
+  }
+}

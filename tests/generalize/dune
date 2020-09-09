@@ -1,0 +1,4 @@
+(test
+ (name generalize)
+ (libraries genelib)
+ (deps (glob_files ../progs/*)))

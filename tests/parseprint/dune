@@ -1,0 +1,4 @@
+(test
+ (name parseprint)
+ (libraries genelib)
+ (deps (glob_files ../progs/*)))

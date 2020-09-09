@@ -1,0 +1,11 @@
+(executable
+ (name symbinterp)
+ (libraries genelib))
+
+(rule
+ (deps ../../bin/gene.exe (glob_files ../progs/*))
+ (action (with-stdout-to symbinterp.output (run ./symbinterp.exe))))
+
+(rule
+ (alias runtest)
+ (action (diff symbinterp.expected symbinterp.output)))

@@ -1,0 +1,4 @@
+(test
+ (name concrete)
+ (libraries genelib)
+ (deps (glob_files ../progs/*)))

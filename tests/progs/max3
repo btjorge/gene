@@ -1,0 +1,17 @@
+(* The name of this file is not well chosen *)
+
+max (x, y) {
+  if (x <= y) {
+    return y
+  } else {
+    return x
+  }
+}
+
+max3 (x, y, z) {
+  return max (max(x, y), z)
+}
+
+test () {
+  assertEquals (max3 (1, 3, 2), 3)
+}

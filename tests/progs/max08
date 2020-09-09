@@ -1,0 +1,10 @@
+max (x, y) {
+  return x
+}
+
+(* formules attendues : z = x et w = u *) 
+
+test () {
+  assertEquals (max (5, 2), 5);
+  assertEquals (max (6, 2), 6)
+}

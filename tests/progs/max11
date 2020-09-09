@@ -1,0 +1,17 @@
+max (x, y) {
+  if (x <= y) {
+    return x
+  } else {
+    return y
+  }
+}
+
+(* formules attendues : x <= y -> z = x /\ ! x <= y -> z = y,
+ *                      u <= v -> w = u /\ ! u <= v -> w = v,
+ *                      a <= b -> c = a /\ ! a <= b -> c = b *)
+
+test () {
+  assertEquals (max (5, 2), 5);
+  assertEquals (max (6, 2), 6);
+  assertEquals (max (2, 5), 5)
+}

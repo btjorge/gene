@@ -1,0 +1,152 @@
+../../bin/gene.exe --generate-tests ../progs/max02
+The following test parameters are not used by the code (see the generic test):
+_x0, _x1
+Generalized test:
+assertEquals (max (_x0, _x1), _x2)
+Your test:
+assertEquals (max (5, 2), 5)
+Passing tests:
+assertEquals (max (_x0, _x1), 5)
+Failing tests:
+assertEquals (max (_x0, _x1), 0)
+../../bin/gene.exe --generate-tests ../progs/max03
+The following test parameters are not used by the code (see the generic test):
+_x1
+Generalized test:
+assertEquals (max (_x0, _x1), _x2)
+Your test:
+assertEquals (max (5, 2), 5)
+Passing tests:
+assertEquals (max (0, _x1), 0)
+Failing tests:
+assertEquals (max (0, _x1), 1)
+../../bin/gene.exe --generate-tests ../progs/max04
+The following test parameters are not used by the code (see the generic test):
+_x0
+Generalized test:
+assertEquals (max (_x0, _x1), _x2)
+Your test:
+assertEquals (max (5, 2), 5)
+Passing tests:
+assertEquals (max (_x0, 0), 0)
+Failing tests:
+assertEquals (max (_x0, 0), 1)
+../../bin/gene.exe --generate-tests ../progs/max05
+Your test:
+assertEquals (max (5, 2), 5)
+Passing tests:
+assertEquals (max (0, 0), 0)
+assertEquals (max (1, 0), 0)
+Failing tests:
+assertEquals (max (0, 0), 2)
+assertEquals (max (0, -1), 3)
+../../bin/gene.exe --generate-tests ../progs/max06
+Your test:
+assertEquals (max (5, 2), 5)
+Passing tests:
+assertEquals (max (0, 0), 0)
+assertEquals (max (0, -1), 0)
+Failing tests:
+assertEquals (max (0, 0), 2)
+assertEquals (max (1, 0), 3)
+../../bin/gene.exe --generate-tests ../progs/max3
+Your test:
+assertEquals (max3 (1, 3, 2), 3)
+Passing tests:
+assertEquals (max3 (0, 0, 0), 0)
+assertEquals (max3 (0, 0, -1), 0)
+assertEquals (max3 (0, -1, 0), 0)
+assertEquals (max3 (0, -1, -1), 0)
+Failing tests:
+assertEquals (max3 (0, 0, 0), 3)
+assertEquals (max3 (0, 0, -1), 3)
+assertEquals (max3 (0, -1, 0), 2)
+assertEquals (max3 (0, -1, -1), 2)
+../../bin/gene.exe --generate-tests ../progs/max_imp
+Your test:
+test () {
+  x := 2;
+  y := 3;
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+  assertEquals (z, 3)
+}
+Passing tests:
+test (_x0, _x1, _x2) {
+  x := 0;
+  y := 0;
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+  assertEquals (z, 0)
+}
+test (_x0, _x1, _x2) {
+  x := 0;
+  y := -1;
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+  assertEquals (z, 0)
+}
+Failing tests:
+test (_x0, _x1, _x2) {
+  x := 0;
+  y := 0;
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+  assertEquals (z, 2)
+}
+test (_x0, _x1, _x2) {
+  x := 1;
+  y := 0;
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+  assertEquals (z, 3)
+}
+../../bin/gene.exe --generate-tests ../progs/max_imp2
+Your test:
+test () {
+  x := 2;
+  y := 3;
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+  assertEquals (z, y)
+}
+Passing tests:
+test (_x0, _x1) {
+  x := 0;
+  y := 0;
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+  assertEquals (z, y)
+}
+Failing tests:
+test (_x0, _x1) {
+  x := 1;
+  y := 0;
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+  assertEquals (z, y)
+}

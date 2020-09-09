@@ -1,0 +1,12 @@
+test () {
+  x := 2;
+  y := 3;
+
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+
+  assertEquals (z, 3)
+}

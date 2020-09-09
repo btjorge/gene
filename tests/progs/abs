@@ -1,0 +1,15 @@
+max (x, y) {
+  if (x <= y) {
+    return y
+  } else {
+    return x
+  }
+}
+
+abs (x) {
+  return max (x, 0 - x)
+}
+
+test () {
+  assertEquals (abs (5), 5)
+}

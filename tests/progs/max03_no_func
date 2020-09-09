@@ -1,0 +1,5 @@
+(* formule attendue : y = x *)
+
+test () {
+  assertEquals (5, 5)
+}

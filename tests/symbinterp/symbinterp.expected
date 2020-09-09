@@ -1,0 +1,103 @@
+../../bin/gene.exe --print-generic --print-formula ../progs/max03_no_func
+Generalized test:
+test (_x0, _x1) {
+  assertEquals (_x0, _x1)
+}
+Inferred formula:
+_x0 = _x1
+../../bin/gene.exe --print-generic --print-formula ../progs/max06_no_func
+Generalized test:
+test (x, y, z) {
+  if (x <= y) {
+    assertEquals (y, z)
+  } else {
+    assertEquals (x, z)
+  }
+}
+Inferred formula:
+((x <= y && y = z) || (not (x <= y) && x = z))
+../../bin/gene.exe --print-generic --print-formula ../progs/max02
+Generalized test:
+test (_x0, _x1, _x2) {
+  assertEquals (max (_x0, _x1), _x2)
+}
+Inferred formula:
+5 = _x2
+../../bin/gene.exe --print-generic --print-formula ../progs/max03
+Generalized test:
+test (_x0, _x1, _x2) {
+  assertEquals (max (_x0, _x1), _x2)
+}
+Inferred formula:
+_x0 = _x2
+../../bin/gene.exe --print-generic --print-formula ../progs/max04
+Generalized test:
+test (_x0, _x1, _x2) {
+  assertEquals (max (_x0, _x1), _x2)
+}
+Inferred formula:
+_x1 = _x2
+../../bin/gene.exe --print-generic --print-formula ../progs/max05
+Generalized test:
+test (_x0, _x1, _x2) {
+  assertEquals (max (_x0, _x1), _x2)
+}
+Inferred formula:
+((_x0 <= _x1 && _x0 = _x2) || (not (_x0 <= _x1) && _x1 = _x2))
+../../bin/gene.exe --print-generic --print-formula ../progs/max06
+Generalized test:
+test (_x0, _x1, _x2) {
+  assertEquals (max (_x0, _x1), _x2)
+}
+Inferred formula:
+((_x0 <= _x1 && _x1 = _x2) || (not (_x0 <= _x1) && _x0 = _x2))
+../../bin/gene.exe --print-generic --print-formula ../progs/abs
+Generalized test:
+test (_x0, _x1) {
+  assertEquals (abs (_x0), _x1)
+}
+Inferred formula:
+((_x0 <= (0 - _x0) && (0 - _x0) = _x1)
+||
+(not (_x0 <= (0 - _x0)) && _x0 = _x1))
+../../bin/gene.exe --print-generic --print-formula ../progs/max3
+Generalized test:
+test (_x0, _x1, _x2, _x3) {
+  assertEquals (max3 (_x0, _x1, _x2), _x3)
+}
+Inferred formula:
+((_x0 <= _x1 && (_x1 <= _x2 && _x2 = _x3))
+||
+((_x0 <= _x1 && (not (_x1 <= _x2) && _x1 = _x3))
+||
+((not (_x0 <= _x1) && (_x0 <= _x2 && _x2 = _x3))
+||
+(not (_x0 <= _x1) && (not (_x0 <= _x2) && _x0 = _x3)))))
+../../bin/gene.exe --print-generic --print-formula ../progs/max_imp
+Generalized test:
+test (_x0, _x1, _x2) {
+  x := _x0;
+  y := _x1;
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+  assertEquals (z, _x2)
+}
+Inferred formula:
+((_x0 <= _x1 && _x1 = _x2) || (not (_x0 <= _x1) && _x0 = _x2))
+../../bin/gene.exe --print-generic --print-formula ../progs/max_imp2
+Generalized test:
+test (_x0, _x1) {
+  x := _x0;
+  y := _x1;
+  if (x <= y) {
+    z := y
+  } else {
+    z := x
+  };
+  assertEquals (z, y)
+}
+Inferred formula:
+((_x0 <= _x1 && _x1 = _x1) || (not (_x0 <= _x1) && _x0 = _x1))

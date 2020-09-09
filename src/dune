@@ -1,0 +1,9 @@
+(library
+ (name genelib)
+ (c_library_flags -lstdc++)
+ (libraries pprint z3))
+
+(menhir
+ (modules parser))
+
+(ocamllex lexer)

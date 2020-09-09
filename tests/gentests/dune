@@ -1,0 +1,11 @@
+(executable
+ (name gentests)
+ (libraries genelib))
+
+(rule
+ (deps ../../bin/gene.exe (glob_files ../progs/*))
+ (action (with-stdout-to gentests.output (run ./gentests.exe))))
+
+(rule
+ (alias runtest)
+ (action (diff gentests.expected gentests.output)))
