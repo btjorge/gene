@@ -1,0 +1,12 @@
+max (x, y) {
+  if (x <= y) {
+    return y
+  } else {
+    return x
+  }
+}
+
+test () {
+  assertEquals(max (5, 2), 5);
+  assertEquals(max (3, 4), 4)
+}

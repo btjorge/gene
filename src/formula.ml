@@ -56,10 +56,16 @@ let rec substitute v t = function
 let value_binop = function
   | Plus -> ( + )
   | Minus -> ( - )
+  | Times -> ( * )
+  | Div -> ( / )
 
 let satisfies_rel = function
   | LessEq -> ( <= )
+  | Less -> ( < )
+  | GreatEq -> ( >= )
+  | Great -> ( > )
   | Equals -> ( = )
+  | Diff -> ( <> )
 
 let rec value_term v = function
   | Number n -> n

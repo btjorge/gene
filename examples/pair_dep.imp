@@ -1,0 +1,13 @@
+f (x, y) {
+  if (x == 6 || x == 10) {
+    return 3
+  } else {
+    return 0
+  }
+}
+
+test () {
+  assertEquals(f (4, 0), 0);
+  assertEquals(f (6, 2), 3);
+  assertEquals(f (10, 3), 3)
+}

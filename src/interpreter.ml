@@ -13,12 +13,18 @@ type command_result = CReturn of value
                     | CStore of store
 
 let binop_func = function
-  | Plus -> (+)
-  | Minus -> (-)
+  | Plus -> ( + )
+  | Minus -> ( - )
+  | Times -> ( * )
+  | Div -> ( / )
 
 let rel_func = function
-  | LessEq -> (<=)
-  | Equals -> (=)
+  | LessEq -> ( <= )
+  | Less -> ( < )
+  | GreatEq -> ( >= )
+  | Great -> ( > )
+  | Equals -> ( = )
+  | Diff -> ( <> )
 
 let rec eval_expr funcs s = function
   | Number n -> n

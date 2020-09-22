@@ -16,10 +16,17 @@ let binop_func op t1 t2 =
   match op with
   | Plus -> mk_add ctx [t1; t2]
   | Minus -> mk_sub ctx [t1; t2]
+  | Times -> mk_mul ctx [t1; t2]
+  | Div -> mk_div ctx t1 t2
 
-let rel_func = function
-  | LessEq -> mk_le ctx
-  | Equals -> Boolean.mk_eq ctx
+let rel_func op t1 t2 =
+  match op with
+  | LessEq -> mk_le ctx t1 t2
+  | Less -> mk_lt ctx t1 t2
+  | GreatEq -> mk_ge ctx t1 t2
+  | Great -> mk_gt ctx t1 t2
+  | Equals -> Boolean.mk_eq ctx t1 t2
+  | Diff -> Boolean.(mk_not ctx (mk_eq ctx t1 t2))
 
 let rec term = function
   | Number n -> Integer.mk_numeral_i ctx n

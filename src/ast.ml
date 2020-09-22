@@ -1,8 +1,8 @@
 type ident = string
 
-type binop = Plus | Minus (* for now *)
+type binop = Plus | Minus | Times | Div
 
-type rel = LessEq | Equals (* for now *)
+type rel = LessEq | Less | GreatEq | Great | Equals | Diff
 
 type expr = Number of int
           | Var of ident

@@ -1,0 +1,13 @@
+div (x, y) {
+  if (y == 0) {
+    return 0
+  } else {
+    return x / y
+  }
+}
+
+test () {
+  assertEquals(div (4, 0), 0);
+  assertEquals(div (6, 2), 3);
+  assertEquals(div (9, 4), 2)
+}

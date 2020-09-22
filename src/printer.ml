@@ -11,12 +11,18 @@ let indent n d =
 let vert l = separate hardline (List.map (fun d -> group d) l)
 
 let binop = function
-  | Plus -> string "+"
+  | Plus -> string "*"
   | Minus -> string "-"
+  | Times -> string "*"
+  | Div -> string "/"
 
 let rel = function
   | LessEq -> string "<="
+  | Less -> string "<"
+  | GreatEq -> string ">="
+  | Great -> string ">"
   | Equals -> string "="
+  | Diff -> string "!="
 
 let varid ids id =
   match List.assoc_opt id ids with

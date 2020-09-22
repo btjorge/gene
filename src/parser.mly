@@ -8,10 +8,13 @@
 %token SEMICOLON
 %token ASSIGN
 %token PLUS MINUS
+%token TIMES DIV
 %token TRUE FALSE
 %token AND OR
 %token NOT
-%token LESSEQ
+%token LESSEQ LESS
+%token GREATEQ GREAT
+%token EQUALS DIFF
 %token IF ELSE
 %token ASSERTEQ
 %token RETURN
@@ -27,6 +30,7 @@
 %left AND
 %left OR
 %left PLUS MINUS
+%left TIMES DIV
 
 %start <Ast.prog> prog
 
@@ -52,10 +56,16 @@ command:
 | id = IDENT ASSIGN e = expr  { Assign (id, e) }
 | IF LPAREN b = bexpr RPAREN
   LBRACE c1 = command RBRACE
-  ELSE LBRACE c2 = command RBRACE  { IfThenElse (b, c1, c2) }
+  ELSE c2 = else_branch  { IfThenElse (b, c1, c2) }
 | ASSERTEQ LPAREN e1 = expr COMMA e2 = expr RPAREN  { AssertEq (e1, e2) }
 | c1 = command SEMICOLON c2 = command  { Seq (c1, c2) }
 | RETURN e = expr  { Return e }
+
+else_branch:
+| LBRACE c = command RBRACE  { c }
+| IF LPAREN b = bexpr RPAREN
+  LBRACE c1 = command RBRACE
+  ELSE c2 = else_branch  { IfThenElse (b, c1, c2) }
 
 bexpr:
 | TRUE  { True }
@@ -74,7 +84,14 @@ expr:
 
 %inline rel:
 | LESSEQ  { LessEq }
+| LESS  { Less }
+| GREATEQ  { GreatEq }
+| GREAT  { Great }
+| EQUALS  { Equals }
+| DIFF  { Diff }
 
 %inline binop:
 | PLUS  { Plus }
 | MINUS  { Minus }
+| TIMES  { Times }
+| DIV  { Div }

@@ -1,0 +1,7 @@
+max (x, y) {
+  return 5
+}
+
+test () {
+  assertEquals(max (5, 2), 5)
+}
